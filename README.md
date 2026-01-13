@@ -10,3 +10,5 @@ The benefits of this solution include:
 - reducing the time and resources required for unique font generation 
 - supplementing a sample of characters to the entire set of Korean characters in that font (this repo focuses on English only)
 - able to accept multiple input forms of sample characters
+
+More documentation will be updated here:
