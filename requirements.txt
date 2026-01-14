@@ -1,1 +1,4 @@
 #dev note: write libraries required here
+#dependencies include:
+opencv-python
+pytorch
