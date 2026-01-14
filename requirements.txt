@@ -1,4 +1,8 @@
 #dev note: write libraries required here
+#for mac: python3 -m pip install opencv-python for opencv
+#for windows: ??
+
+
 #dependencies include:
-opencv-python
+opencv-python==4.12.0
 pytorch
