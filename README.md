@@ -38,6 +38,4 @@ Based on the inspiration, my approach to this project is in a structured 2-stage
 
 Stage 1 workflow process:
 
-- input (from dataset) -> preprocessing.py -> segmentation.py -> vectorization.py -> font_builder.py -> font output (.ttf file)b
-
-ben
+- input (from dataset) -> preprocessing.py -> segmentation.py -> vectorization.py -> font_builder.py -> font output (.ttf file)

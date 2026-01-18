@@ -1,3 +1,4 @@
 #contains a list of files that Git should ignore when pushing to main/origin
 #prevents temporary files, build artifacts, sensitive data
 
+*.venv
