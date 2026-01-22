@@ -1,0 +1,24 @@
+This text file contains notes during development.
+Notes made here are purely done in bulk, what appears on README documentation is moreso a changelog / summary of what has been implemented
+
+
+#---preprocessing.py---
+    useful sources:
+        opencv official documentation home: https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html
+        opencv official documentation (for image preprocessing): https://docs.opencv.org/4.x/d2/d96/tutorial_py_table_of_contents_imgproc.html
+
+
+    During gray_norm development:
+        question: what would be the most advisable dimension size?
+            big images get downsized, small images get upsized
+            but image inputs can be of ANY size, possible solution: put constraints on input image size OR limit image size of a person's writing
+        solution:
+            - later in development, restrict user image inputs to max(width, height) <= 1024 (ensure if either dimensions are bigger, set it to 1024 max)
+            - preserve aspect ratio
+            - sentence -> word segmentation doesn't have to resize the images themselves, this'll be done in word segmentation
+            - WORDS: hardcoded height set to 64px. width can vary, but stay UNDER 512px
+                if original width > 512, resize it to preserve aspect ratio
+    
+    During binarize development:
+        - currently, threshold=150 and regular cv.threshold with type THRESH_BINARY + THRESH_OTSU works nicely, though may have to be changed
+    
