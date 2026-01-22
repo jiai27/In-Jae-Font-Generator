@@ -2,3 +2,4 @@
 #prevents temporary files, build artifacts, sensitive data
 
 *.venv
+**/data/
