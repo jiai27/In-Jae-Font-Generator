@@ -24,12 +24,15 @@ import numpy as np
 def main(): 
     #initialize some sample words
     image_path = "data/iam_words/words/"
-    labour = cv.imread(image_path+"a01/a01-000u/a01-000u-01-03.png")                 #data regarding this image (from words.txt): a01-000u-01-03 ok 156 1400 937 294 59 NN Labour
-    fearlessly = cv.imread(image_path+"b04/b04-010/b04-010-05-03.png")               #data regarding this image (from words.txt): b04-010-05-03 ok 172 1072 1656 434 106 RB fearlessly
-    nationalists = cv.imread(image_path+"a02/a02-098/a02-098-04-01.png")             #data regarding this image (from words.txt): a02-098-04-01 err 162 640 1460 356 68 NNS nationalists
-    blue = cv.imread("examples/ex1.png")
+    #labour = cv.imread(image_path+"a01/a01-000u/a01-000u-01-03.png")                 #data regarding this image (from words.txt): a01-000u-01-03 ok 156 1400 937 294 59 NN Labour
+    #fearlessly = cv.imread(image_path+"b04/b04-010/b04-010-05-03.png")               #data regarding this image (from words.txt): b04-010-05-03 ok 172 1072 1656 434 106 RB fearlessly
+    #nationalists = cv.imread(image_path+"a02/a02-098/a02-098-04-01.png")             #data regarding this image (from words.txt): a02-098-04-01 err 162 640 1460 356 68 NNS nationalists
+    blue = cv.imread("/Users/Joaquin/Downloads/ex1.png")
 
-    example_words = [labour,fearlessly, nationalists, blue]
+    cv.imshow("blue",blue)
+
+    #example_words = [labour,fearlessly, nationalists, blue]
+    example_words = [blue]
     for index, word in enumerate(example_words):
         #cv.imshow(f'orig word {index}',word)
         gray_normed = gray_norm(word)
@@ -47,8 +50,8 @@ def gray_norm(image):
     input: image of a word (image)
     function: grayscales, crops, normalizes image to proper size for all words
     '''
+    #cv.cvtColor
     gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
-
     #resize to (hxw: 64x512 max)
     ratio = gray.shape[1] / gray.shape[0]   #width/height ratio
 
