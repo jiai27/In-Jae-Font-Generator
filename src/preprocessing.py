@@ -22,17 +22,23 @@ import numpy as np
 
 #--WORD SEGMENTATION--; the assumed input is just a word, future proofing involves segmenting a sentence into a word
 def main(): 
-    #initialize some sample words
+    #initialize some sample words -- WINDOWS
     image_path = "data/iam_words/words/"
-    #labour = cv.imread(image_path+"a01/a01-000u/a01-000u-01-03.png")                 #data regarding this image (from words.txt): a01-000u-01-03 ok 156 1400 937 294 59 NN Labour
-    #fearlessly = cv.imread(image_path+"b04/b04-010/b04-010-05-03.png")               #data regarding this image (from words.txt): b04-010-05-03 ok 172 1072 1656 434 106 RB fearlessly
-    #nationalists = cv.imread(image_path+"a02/a02-098/a02-098-04-01.png")             #data regarding this image (from words.txt): a02-098-04-01 err 162 640 1460 356 68 NNS nationalists
-    blue = cv.imread("/Users/Joaquin/Downloads/ex1.png")
+    labour = cv.imread(image_path+"a01/a01-000u/a01-000u-01-03.png")                 #data regarding this image (from words.txt): a01-000u-01-03 ok 156 1400 937 294 59 NN Labour
+    fearlessly = cv.imread(image_path+"b04/b04-010/b04-010-05-03.png")               #data regarding this image (from words.txt): b04-010-05-03 ok 172 1072 1656 434 106 RB fearlessly
+    nationalists = cv.imread(image_path+"a02/a02-098/a02-098-04-01.png")             #data regarding this image (from words.txt): a02-098-04-01 err 162 640 1460 356 68 NNS nationalists
+    blue = cv.imread("examples/ex1.png")
 
-    cv.imshow("blue",blue)
+    #initialize sample words -- MAC
+    '''
+    image_path_mac = "/Users/Joaquin/Downloads/"
+    labour = cv.imread(image_path_mac+"archive/iam_words/words/a01/a01-000u/a01-000u-01-03.png")
+    fearlessly = cv.imread(image_path_mac+"archive/iam_words/words/b04/b04-010/b04-010-05-03.png")
+    nationalists = cv.imread(image_path_mac+"archive/iam_words/words/a02/a02-098/a02-098-04-01.png")
+    blue = cv.imread(image_path_mac+"ex1.png")
+    '''
 
-    #example_words = [labour,fearlessly, nationalists, blue]
-    example_words = [blue]
+    example_words = [labour,fearlessly, nationalists, blue]
     for index, word in enumerate(example_words):
         #cv.imshow(f'orig word {index}',word)
         gray_normed = gray_norm(word)
